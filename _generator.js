@@ -1,10 +1,9 @@
 var vendorScriptMap = {
-	bootstrap: 				'bootstrap-3.1.1.min.js',
-	html5shim: 				'html5shim-3.6.min.js',
-	respond:				'respond-1.1.0.min.js',
-	jquery:					'jquery-1.11.0.min.js',
-	modernizr:				'modernizr-2.6.2.min.js',
-	modernizr_responsive:	'modernizr-2.6.2-respond-1.1.0.min.js'
+	bootstrap: 				'bootstrap-3.3.7.min.js',
+	html5shiv: 				'html5shiv-3.7.3.min.js',
+	respond:				'respond-1.4.2.min.js',
+	jquery:					'jquery-3.3.1.min.js',
+	modernizr:				'modernizr-3.6.0.min.js'
 };
 
 generator.applyToOutputNode = function(outputFolderNode, inputFolderNode) {
@@ -19,12 +18,12 @@ generator.applyToOutputNode = function(outputFolderNode, inputFolderNode) {
 	config.ga_siteId = config.ga ? config.ga_siteId || '' : undefined;
 	
 	// Add common files from H5BP
-	var boilerplateInputNode = inputFolderNode.folderForPath('html5-boilerplate-4.3.0');
+	var boilerplateInputNode = inputFolderNode.folderForPath('html5-boilerplate_v6.1.0');
 	var boilerplateOutputNode = outputFolderNode.addFolderAtPath(boilerplateInputNode, './', OverwriteOnConflict);
 	
-	var excludePaths = ['CHANGELOG.md', 'CONTRIBUTING.md', 'css/', 'doc/', 'index.html', 'README.md', 'js/vendor/'];
+    var excludePaths = ['css/', 'doc/', 'js/vendor/', 'index.html' ];
 	if (!config.serverExtras) {
-		excludePaths = excludePaths.concat(['.htaccess', '404.html', 'crossdomain.xml', 'humans.txt', 'robots.txt']);
+		excludePaths = excludePaths.concat(['.htaccess', '404.html', 'humans.txt', 'robots.txt']);
 	}
 	
 	excludePaths.forEach(function(excludePath) { 
