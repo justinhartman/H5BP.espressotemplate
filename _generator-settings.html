@@ -1,0 +1,73 @@
+<form onsubmit="assistant.finish(); return false;">
+	<section>
+		<h4>Choose a base:</h4>
+		
+		<input type="radio" name="base" value="none" checked="true">
+		<strong>None</strong>
+		<span>Start with just the basics.</span>
+		<br/>
+		
+		<input type="radio" name="base" value="responsive">
+		<strong>Responsive</strong>
+		<span>A mobile-first, responsive design</span>
+		<br/>
+		
+		<input type="radio" name="base" value="bootstrap">
+		<strong>Bootstrap</strong>
+		<span>A mobile-first, responsive design using the Bootstrap framework.
+		<br/>
+	</section>
+	
+	<section>
+		<h4>Choose an HTML5 Fallback:</h4>
+
+		<input type="radio" name="polyfill" value="modernizr" checked="true">
+		<strong>Modernizr</strong>
+		<span>Check each HTML5 feature natively and add basic DOM support for unrecognized elements.</span>
+		<br/>
+		
+		<input type="radio" name="polyfill" value="html5shim">
+		<strong>HTML5Shim</strong>
+		<span>Add basic DOM support for unrecognized elements.</span>
+		<br/>
+	</section>	
+
+	
+	<section>
+		<h4>Extras</h4>
+
+		<input type="checkbox" name="ieTags" checked="true">
+		<strong>IE Classes</strong>
+		<span>Include classes in the markup for Internet Explorer.</span>
+		<br/>
+		
+		<input type="checkbox" name="serverExtras">
+		<strong>Server Extras</strong>
+		<span>Include .htaccess, robots.txt, a 404 landing page, etc.</span>
+		<br/>
+		
+		<input type="checkbox" name="ga" onclick="h5bp.toggle_gaSiteId();" >
+		<strong>Google Analytics</strong>
+		<span>Insert markup for Site ID: <input type="text" name="ga_siteId" placeholder="UA-XXXXX-X" disabled="true"></span>
+		<br/>
+	</section>
+</form>
+
+<script>
+	window.h5bp = {
+		toggle_gaSiteId: function() {
+			var siteId = document.querySelector('input[name=ga_siteId]');
+			
+			if (document.querySelector('input[name=ga]').checked) {
+				siteId.disabled = false;
+				siteId.focus();
+			}
+			else {
+				siteId.disabled = true;
+				siteId.value = '';
+			}
+			
+			return true;
+		}
+	};
+</script>
