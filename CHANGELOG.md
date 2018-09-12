@@ -21,13 +21,10 @@ version released to date.
     - Added `MIT` License to project as per H5BP's license file.
     - New `README.md` with specific detail on how to get this operational along
       with other key, project-related information.
-    - Added project related files including, `.github` templates, `CHANGELOG.md`
-      , `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md`. 
+    - Added project files including, `.github` templates, `CHANGELOG.md`,
+      `CODE_OF_CONDUCT.md` and `CONTRIBUTING.md`.
 
 ## Version 0.0.1 (11/09/2018)
 
 - [#new](#new)
-  - First Commit to the Repo.
-
-
-[//]: # Can use this for bugs: [#bugfix](#bugfix)
+    - First Commit to the Repo.
